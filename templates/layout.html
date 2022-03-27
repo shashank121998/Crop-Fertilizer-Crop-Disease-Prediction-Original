@@ -3,7 +3,9 @@
 <head>
 	<title>{{ title }}</title>
 	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'images/favicon.ico') }}"/>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,500&display=swap" rel="stylesheet">
 	<!-- for-mobile-apps -->
 	<meta name = "viewport" content = "width=device-width, initial-scale=1">
 	<meta charset = "utf-8">
@@ -93,15 +95,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 		}
 	</style>
-	<script>
-		addEventListener("load", function () {
-			setTimeout(hideURLbar, 0);
-		}, false);
-
-		function hideURLbar() {
-			window.scrollTo(0, 1);
-		}
-	</script>
 	<script src = "https://code.jquery.com/jquery-3.3.1.slim.min.js"
 		integrity = "sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
 		crossorigin = "anonymous"></script>
@@ -130,46 +123,154 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- google fonts -->
 	<link href = "//fonts.googleapis.com/css?family=Thasadith:400,400i,700,700i&amp;subset=latin-ext,thai,vietnamese"
 		rel = "stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
 	<!-- //google fonts -->
 	<style>
-		header {
-			background-color: rgba(30, 30, 30, 1);
-			margin-top: 0rem;
-			display: block;
+		.nav-wrapper {
+			height: 80px;
 		}
+        .header {
+			position: fixed;
+			width: 100%;
+			top: 0;
+          	padding: 10px 16px;
+          	background-image: linear-gradient(45deg,black,#02360e);
+          	color: #f1f1f1;
+          	z-index: 2;
+        }
+        .modal {
+        	display: none;
+        	position: fixed;
+        	z-index: 1;
+        	padding-top: 100px;
+        	left: 0;
+        	top: 0;
+        	width: 100%;
+			height: 95%;
+        	background-color: rgb(0,0,0);
+	        background-color: rgba(0,0,0,0.4);
+        }
+        .modal-content {
+        	background-color: #fefefe;
+        	margin: auto;
+        	padding: 20px;
+	        border: 1px solid #888;
+        	width: 80%;
+        }
+        .close {
+        	color: #aaaaaa;
+        	float: right;
+        	font-size: 28px;
+        	font-weight: bold;
+        }
+        .close:hover, .close:focus {
+        	color: #000;
+        	text-decoration: none;
+        	cursor: pointer;
+        }
+		button:hover, button:focus {
+			outline: none;
+		}
+        .iframe-container {
+          	position: relative;
+          	width: 100%;
+          	padding-bottom: 56.25%;
+        }
+        .iframe-container iframe {
+          	position: absolute;
+          	top:0;
+          	left: 0;
+          	width: 100%;
+        }
 	</style>
 </head>
-<body>
+<body>  
 	<!-- Navigation -->
-	<nav class = "navbar navbar-expand-lg navbar-dark bg-dark static-top" style = "background-color: #1C00ff00;">
-		<div class = "container">
-			<a class = "navbar-brand" href = "{{ url_for('home') }}">
-				<img src = "{{ url_for('static', filename = 'images/Agri.jpg') }}" style = "width: 90px; height: 90px" alt = "">
-			</a>
-			<button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarResponsive"
-				aria-controls = "navbarResponsive" aria-expanded = "false" aria-label = "Toggle navigation">
-				<span class = "navbar-toggler-icon"></span>
-			</button>
-			<div class = "collapse navbar-collapse" id = "navbarResponsive">
-				<ul class = "navbar-nav ml-auto">
-					<li class = "nav-item active">
-						<h5><a class = "nav-link" href = "{{ url_for('home') }}">Home
-							<span class = "sr-only">(current)</span>
-						</a></h5>
-					</li>
-					<li class = "nav-item">
-						<h5><a class = "nav-link text-center" href = "{{ url_for('crop_recommend') }}">Crop</a></h5>
-					</li>
-					<li class = "nav-item">
-						<h5><a class = "nav-link text-center" href = "{{ url_for('fertilizer_recommendation') }}">Fertilizer</a></h5>
-					</li>
-					<li class = "nav-item">
-						<h5><a class = "nav-link text-center" href = "{{ url_for('disease_prediction') }}">Disease</a></h5>
-					</li>
-				</ul>
+	<div class="nav-wrapper">
+		<nav id="myHeader" class = "navbar navbar-expand-lg navbar-dark bg-dark static-top header" style = "background-color: #1C00ff00;">
+			<div class = "container" style="margin:0px">
+				<a class = "navbar-brand" href = "{{ url_for('home') }}">
+					<img src = "{{ url_for('static', filename = 'images/agronomy.png') }}" style = "width: 50px; height: 50px; opacity: 0.7;" alt = "">
+				</a>
+				<p style="font-family: 'Exo 2', sans-serif; font-size:20px">AGRONOMY</p>
+				<button class = "navbar-toggler" type = "button" data-toggle = "collapse" data-target = "#navbarResponsive"
+					aria-controls = "navbarResponsive" aria-expanded = "false" aria-label = "Toggle navigation">
+					<span class = "navbar-toggler-icon"></span>
+				</button>
+				<div class = "collapse navbar-collapse" id = "navbarResponsive">
+					<ul class = "navbar-nav ml-auto">
+						<li class = "nav-item active">
+							<h5><a class = "nav-link text-center" href = "{{ url_for('home') }}">Home</a></h5>
+						</li>
+						<li class = "nav-item">
+							<h5><a class = "nav-link text-center" style="cursor:pointer" id="myBtn">Video</a></h5>
+						</li>
+						<li class = "nav-item">
+							<h5><a class = "nav-link text-center" href = "{{ url_for('crop_recommend') }}">Crop</a></h5>
+						</li>
+						<li class = "nav-item">
+							<h5><a class = "nav-link text-center" href = "{{ url_for('fertilizer_recommendation') }}">Fertilizer</a></h5>
+						</li>
+						<li class = "nav-item">
+							<h5><a class = "nav-link text-center" href = "{{ url_for('disease_prediction') }}">Disease</a></h5>
+						</li>
+						<li id="google_translate_element">
+						</li>
+							
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
+		</nav>
+	</div>
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+			new google.translate.TranslateElement(
+				{pageLanguage: 'en'},
+				'google_translate_element'
+			);
+		}
+	</script>
+
+	<script type="text/javascript" src=
+"https://translate.google.com/translate_a/element.js?
+		cb=googleTranslateElementInit">
+	</script>
+	<div class="row">
+			<div id="myModal" class="modal">
+					<div class="modal-content row-xs-2 row-lg-12">
+						<span class="close">×</span>
+						<div class="iframe-container">
+							<iframe width="560" height="75%" src="https://www.youtube.com/embed/9YffrCViTVk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+							</iframe>
+					</div>
+				</div>
+			</div>
+	</div>
+    <script>
+
+    var modal = document.getElementById('myModal');
+    
+    var btn = document.getElementById("myBtn");
+    
+    var span = document.getElementsByClassName("close")[0];
+    
+    btn.onclick = function() {
+    modal.style.display = "block";
+    }
+    
+    span.onclick = function() {
+    modal.style.display = "none";
+    }
+    
+    window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+    }
+    </script>
+    
 	{% block body %} {% endblock %}
 
 	<!-- footer -->
@@ -196,7 +297,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 	<!-- //footer -->
 
 	<!-- move top icon -->
-	<a href = "#home" class = "move-top text-center"></a>
+	<button onclick="topFunction()" class = "move-top text-center" id="myBtn" title="Go to top"></button>
+	<script>
+	function topFunction() {
+		document.documentElement.scrollTop = 0;
+	  }
+	</script>
 	<!-- //move top icon -->
 </body>
 </html>

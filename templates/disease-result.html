@@ -7,5 +7,9 @@
           </div>
       </div>
   </div>
+  <form method = "POST" action = "{{ url_for('download2') }}">
+    <input type="hidden" name="fileData" value="{{ prediction }}" />
+    <center><button class="btn btn-success" style="border: 2px solid black; box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);" type="submit" ><img src="static\images\Downloading.png" style="width: 35px; height: 35px; padding: 5px">Download Report</button></center>
+  </form>
 </div>
 {% endblock %}

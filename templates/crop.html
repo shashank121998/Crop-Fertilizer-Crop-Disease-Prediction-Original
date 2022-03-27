@@ -5,7 +5,7 @@
   }
 </style>
 <!--Form Section-->
-<br /><br />
+<br /><br /><br />
 <h2 style = "text-align: center; margin: 0px; color: black">
   <b>Find out the most suitable crop to grow in your farm</b>
 </h2>
@@ -20,11 +20,12 @@
     padding: 10px 10px;
   "
 >
-  <form method = "POST" action = "{{ url_for('crop_prediction') }}">
+  <form method = "POST" action = "{{ url_for('crop_prediction') }}"  autocomplete="off"">
     <div class = "form-group">
       <label for = "Nitrogen" style = "display: block; text-align: center; font-size: 17px"><b>Nitrogen</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Nitrogen"
         name = "nitrogen"
@@ -37,6 +38,7 @@
       <label for = "Phosphorous" style = "display: block; text-align: center; font-size: 17px"><b>Phosphorous</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Phosphorous"
         name = "phosphorous"
@@ -49,6 +51,7 @@
       <label for = "Pottasium" style = "display: block; text-align: center; font-size: 17px"><b>Pottasium</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Pottasium"
         name = "pottasium"
@@ -61,6 +64,8 @@
       <label for = "ph" style = "display: block; text-align: center; font-size: 17px"><b>ph level</b></label>
       <input
         type = "number"
+        min = "0"
+        max = "14"
         step = "0.01"
         class = "form-control"
         id = "ph"
@@ -74,11 +79,13 @@
       <label for = "Rainfall" style = "display: block; text-align: center; font-size: 17px"><b>Rainfall (in mm)</b></label>
       <input
         type = "number"
+        min = "0"
+        max = "1000"
         step = "0.01"
         class = "form-control"
         id = "Rainfall"
         name = "rainfall"
-        placeholder = "Enter the value"
+        placeholder = "Enter the value in mm"
         style = "font-weight: bold"
         required
       />
@@ -109,7 +116,16 @@
     <div class = "d-flex justify-content-center">
       <button
         type = "submit"
-        style = "color: black; background: green; font-weight: bold; border: black; width: 130px; height:50px; border-radius:12px; font-size: 21px;"
+        style = "
+          color: black;
+          background: green;
+          font-weight: bold;
+          border:2px solid black;
+          width: 130px;
+          height:50px;
+          border-radius:12px;
+          font-size: 21px;
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"
       >
         Predict
       </button>

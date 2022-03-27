@@ -5,7 +5,8 @@
   }
 </style>
 <!--Form Section-->
-<br /><br />
+<div>
+  <br /><br /><br />
 <h2 style = "text-align: center; margin: 0px; color: black">
   <b>Get informed advice on fertilizer based on soil</b>
 </h2>
@@ -20,11 +21,12 @@
     padding: 10px 10px;
   "
 >
-  <form method = "POST" action = "{{ url_for('fert_recommend') }}">
+  <form method = "POST" action = "{{ url_for('fert_recommend') }}" autocomplete="off">
     <div class = "form-group">
       <label for = "Nitrogen" style = "display: block; text-align: center; font-size: 17px"><b>Nitrogen</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Nitrogen"
         name = "nitrogen"
@@ -37,6 +39,7 @@
       <label for = "Phosphorous" style = "display: block; text-align: center; font-size: 17px"><b>Phosphorous</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Phosphorous"
         name = "phosphorous"
@@ -49,6 +52,7 @@
       <label for = "Pottasium" style = "display: block; text-align: center; font-size: 17px"><b>Pottasium</b></label>
       <input
         type = "number"
+        min = "0"
         class = "form-control"
         id = "Pottasium"
         name = "pottasium"
@@ -98,17 +102,18 @@
         style = "
           color: black;
           background: green;
-          border: black;
+          border:2px solid black;
           font-weight: bold;
           width: 130px;
           height: 50px;
           border-radius: 12px;
           font-size: 21px;
-        "
+          box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);"
       >
         Predict
       </button>
     </div>
   </form>
+</div>
 </div>
 {% endblock %}
