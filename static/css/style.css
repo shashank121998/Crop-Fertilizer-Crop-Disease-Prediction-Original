@@ -408,7 +408,7 @@ li > a:only-child:after { content: ''; }
 }
 
 .w3layouts-banner-info {
-    padding-top: 8em;
+    padding-top: 4em;
 }
 
 .w3layouts-banner-info h3 {

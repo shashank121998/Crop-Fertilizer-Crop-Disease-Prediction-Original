@@ -2,7 +2,7 @@
 <html lang = "en">
 <head>
 	<title>{{ title }}</title>
-	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'images/favicon.ico') }}"/>
+	<link rel = "shortcut icon" href = "{{ url_for('static', filename = 'images/agronomy.png') }}"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,500&display=swap" rel="stylesheet">
@@ -128,8 +128,30 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link href="https://fonts.googleapis.com/css2?family=Philosopher:wght@700&display=swap" rel="stylesheet">
 	<!-- //google fonts -->
 	<style>
-		.nav-wrapper {
-			height: 80px;
+		#google_translate_element select {
+			background: #f6edfd;
+			font-family: Thasadith, sans-serif;
+			font-size: 15px;
+			border: none;
+			border-radius: 3px;
+			padding: 2px 8px;
+			margin-top: 8px;
+		}
+		.goog-logo-link {
+		   	display: none;
+		}
+		div.goog-te-gadget {
+			color: transparent;
+		}
+		.goog-te-banner-frame.skiptranslate {
+			display: none;
+		}
+		.goog-te-banner-frame {
+			font-family: Thasadith, sans-serif;
+			font-size: 20px;
+		}
+		#goog-gt-tt, .goog-te-balloon-frame {
+			display: none;
 		}
         .header {
 			position: fixed;
@@ -186,11 +208,11 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         }
 	</style>
 </head>
-<body>  
+<body >  
 	<!-- Navigation -->
-	<div class="nav-wrapper">
-		<nav id="myHeader" class = "navbar navbar-expand-lg navbar-dark bg-dark static-top header" style = "background-color: #1C00ff00;">
-			<div class = "container" style="margin:0px">
+	<div class = "nav-wrapper">
+		<nav class = "navbar navbar-expand-lg navbar-dark bg-dark static-top header" style = "background-color: #1C00ff00;">
+			<div class = "container">
 				<a class = "navbar-brand" href = "{{ url_for('home') }}">
 					<img src = "{{ url_for('static', filename = 'images/agronomy.png') }}" style = "width: 50px; height: 50px; opacity: 0.7;" alt = "">
 				</a>
@@ -205,7 +227,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 							<h5><a class = "nav-link text-center" href = "{{ url_for('home') }}">Home</a></h5>
 						</li>
 						<li class = "nav-item">
-							<h5><a class = "nav-link text-center" style="cursor:pointer" id="myBtn">Video</a></h5>
+							<h5><a class = "nav-link text-center" style = "cursor: pointer;" id = "myBtn">Video</a></h5>
 						</li>
 						<li class = "nav-item">
 							<h5><a class = "nav-link text-center" href = "{{ url_for('crop_recommend') }}">Crop</a></h5>
@@ -216,9 +238,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 						<li class = "nav-item">
 							<h5><a class = "nav-link text-center" href = "{{ url_for('disease_prediction') }}">Disease</a></h5>
 						</li>
-						<li id="google_translate_element">
-						</li>
-							
+						<li id="google_translate_element" class="nav-item"></li>
 					</ul>
 				</div>
 			</div>
@@ -232,7 +252,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 			);
 		}
 	</script>
-
 	<script type="text/javascript" src=
 "https://translate.google.com/translate_a/element.js?
 		cb=googleTranslateElementInit">
