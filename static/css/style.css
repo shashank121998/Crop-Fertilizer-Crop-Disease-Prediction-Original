@@ -410,6 +410,7 @@ li > a:only-child:after { content: ''; }
 .banner-top4 {
 	background: url(../images/s3.jpg) no-repeat center;
     background-size: cover;
+	color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -419,6 +420,7 @@ li > a:only-child:after { content: ''; }
 .banner-top5 {
 	background: url(../images/s2.jpg) no-repeat center;
     background-size: cover;
+	color: #fff;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
