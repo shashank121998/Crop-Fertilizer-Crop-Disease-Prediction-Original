@@ -407,6 +407,33 @@ li > a:only-child:after { content: ''; }
     -moz-background-size: cover;
 }
 
+.banner-top4 {
+	background: url(../images/s3.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.banner-top5 {
+	background: url(../images/s2.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.banner-top6 {
+	background: url(../images/s4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
 .w3layouts-banner-info {
     padding-top: 4em;
 }

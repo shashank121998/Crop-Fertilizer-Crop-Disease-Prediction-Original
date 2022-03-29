@@ -4,7 +4,7 @@
       background-color: rgb(206, 206, 228);
   }
 </style>
-<!--Form Section-->
+<div class = "banner-top4">
 <br /><br /><br /><br /><br />
 <h2 style = "text-align: center; margin: 0px; color: black">
   <b>Find out the most suitable crop to grow in your farm</b>
@@ -20,7 +20,7 @@
     padding: 10px 10px;
   "
 >
-  <form method = "POST" action = "{{ url_for('crop_prediction') }}"  autocomplete="off"">
+  <form method = "POST" action = "{{ url_for('crop_prediction') }}"  autocomplete="off">
     <div class = "form-group">
       <label for = "Nitrogen" style = "display: block; text-align: center; font-size: 17px"><b>Nitrogen</b></label>
       <input
@@ -132,9 +132,6 @@
     </div>
   </form>
 </div>
-
-
-
+</div>
 <!-- Form section -->
-
 {% endblock %}

@@ -261,33 +261,32 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 					<div class="modal-content row-xs-2 row-lg-12">
 						<span class="close">×</span>
 						<div class="iframe-container">
-							<iframe width="560" height="75%" src="https://www.youtube.com/embed/9YffrCViTVk" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+							<iframe id = "yt" width="560" height="75%" title="YouTube video player" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
 							</iframe>
 					</div>
 				</div>
 			</div>
 	</div>
     <script>
-
-    var modal = document.getElementById('myModal');
+		var modal = document.getElementById('myModal');
+    	var btn = document.getElementById("myBtn");
+    	var span = document.getElementsByClassName("close")[0];
+    	var yt = document.getElementById("yt");
     
-    var btn = document.getElementById("myBtn");
-    
-    var span = document.getElementsByClassName("close")[0];
-    
-    btn.onclick = function() {
-    modal.style.display = "block";
-    }
-    
-    span.onclick = function() {
-    modal.style.display = "none";
-    }
-    
-    window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
-    }
+    	btn.onclick = function() {
+    		modal.style.display = "block";
+    		yt.setAttribute("src","https://www.youtube.com/embed/9YffrCViTVk");
+    	}
+    	span.onclick = function() {
+    		modal.style.display = "none";
+    		yt.removeAttribute("src");
+    	}
+    	window.onclick = function(event) {
+    		if (event.target == modal) {
+        		modal.style.display = "none";
+         		yt.removeAttribute("src");
+    		}
+    	}
     </script>
     
 	{% block body %} {% endblock %}
