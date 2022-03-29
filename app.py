@@ -1,6 +1,6 @@
 # Importing essential libraries and modules
 
-from flask import Flask, render_template, request, Markup
+from flask import Flask, render_template, request, Markup, make_response
 import numpy as np
 import pandas as pd
 from utils.disease import disease_dic
@@ -13,6 +13,7 @@ import torch
 from torchvision import transforms
 from PIL import Image
 from utils.model import ResNet9
+import re
 # ==============================================================================================
 
 # -------------------------LOADING THE TRAINED MODELS -----------------------------------------------
@@ -220,6 +221,29 @@ def fert_recommend():
 
     return render_template('fertilizer-result.html', recommendation=response, title=title)
 
+def striphtml(data):
+    p = re.compile(r'<.*?>')
+    return p.sub('', data)
+
+@app.route('/download1', methods=['GET', 'POST'])
+def download1():
+    if request.method == 'POST':
+        f=request.form['fileData']
+        f=striphtml(f)
+        response = make_response(f)
+        response.headers["Content-Disposition"] = "attachment; filename=Fertilizer Prediction Report.txt"
+        return response
+    return render_template('index.html')
+
+@app.route('/download2', methods=['GET', 'POST'])
+def download2():
+    if request.method == 'POST':
+        f=request.form['fileData']
+        f=striphtml(f)
+        response = make_response(f)
+        response.headers["Content-Disposition"] = "attachment; filename=Disease Prediction Report.txt"
+        return response
+    return render_template('index.html')
 # render disease prediction result page
 
 @app.route('/disease-predict', methods=['GET', 'POST'])

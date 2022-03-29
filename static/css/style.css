@@ -368,7 +368,7 @@ li > a:only-child:after { content: ''; }
 /* banner style */
 .banner_w3lspvt {
     position: relative;
-    z-index: 1;
+    /*z-index: 1;*/
 }
 
 .banner-top {
@@ -407,8 +407,37 @@ li > a:only-child:after { content: ''; }
     -moz-background-size: cover;
 }
 
+.banner-top4 {
+	background: url(../images/s3.jpg) no-repeat center;
+    background-size: cover;
+	color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.banner-top5 {
+	background: url(../images/s2.jpg) no-repeat center;
+    background-size: cover;
+	color: #fff;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
+.banner-top6 {
+	background: url(../images/s4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -moz-background-size: cover;
+}
+
 .w3layouts-banner-info {
-    padding-top: 16em;
+    padding-top: 4em;
 }
 
 .w3layouts-banner-info h3 {
@@ -1197,15 +1226,18 @@ form.newsletter {
 
 
 /*-- move top --*/
-a.move-top {
+button.move-top {
     width: 34px;
     height: 34px;
-    background: url(../images/move-top.png) no-repeat;
+    background: url(../images/move-up.png) no-repeat;
     display: inline-block;
     position: fixed;
     bottom: 4%;
     right: 2%;
     z-index: 0;
+	border: none;
+	padding: none;
+	border-radius: 50%;
 }
 /*-- //move top --*/
 
@@ -1227,7 +1259,7 @@ a.move-top {
 		font-size: 3.5em;
 	}
 	.w3layouts-banner-info {
-		padding-top: 14em;
+		padding-top: 10em;
 	}
 	.banner-top, .banner-top1, .banner-top2, .banner-top3,.overlay,.overlay1 {
 		min-height: 650px;
@@ -1260,7 +1292,7 @@ a.move-top {
 
 @media(max-width:991px) {
 	.w3layouts-banner-info {
-		padding-top: 12em;
+		padding-top: 8em;
 	}
 	h3.heading {
 		font-size: 36px;
