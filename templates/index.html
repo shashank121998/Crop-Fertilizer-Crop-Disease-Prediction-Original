@@ -8,6 +8,7 @@
 				<div class = "container">
 					<div class = "w3layouts-banner-info text-center">
 						<br><br>
+<<<<<<< Updated upstream
 						<h3 class = "text-wh" style="font-family: 'Philosopher', sans-serif;">WELCOME</h3>
 						<h4 class = "text-wh mx-auto my-4"><b>Get informed decisions about your farming strategy.</b></h4>
 						<br>
@@ -17,6 +18,16 @@
 							2. What fertilizer to use? <br>
 							3. Which disease do your crop have?<br>
 							4. How to cure the disease?</p>
+=======
+						<h3 class = "text-wh" style="font-family: 'Philosopher', sans-serif; animation: 2s anim-lineUp ease-out; text-shadow: 4px 4px 8px #000000;">WELCOME</h3>
+						<h4 class = "text-wh mx-auto my-4" style="animation: 4s anim-lineUp ease-out;"><b>Got doubts regarding your farming strategies?<br>Worry not!</b></h4>
+						<br>
+						<h4 class = "text-wh mx-auto my-4"  style="animation: 6s anim-lineUp ease-out;"><strong>We are here to give you a helping hand</strong></h4>
+						<p class = "text-li mx-auto mt-2" style="animation: 6s anim-lineUp ease-out;">
+							1. Select suitable crop according to your soil<br>
+                            2. Pick out the best fertilizer for your crop<br>
+                            3. Analyze your crop's health</p>
+>>>>>>> Stashed changes
 					</div>
 				</div>
 			</div>
@@ -47,6 +58,7 @@
 </section>
 <!-- //core values -->
 
+<<<<<<< Updated upstream
 <!-- Products & Services -->
 <section class = "banner-top2">
 	<div class = "container py-md-5">
@@ -84,5 +96,85 @@
 		</div>
 	</div>
 </section>
+=======
+
+<!-- Products & Services -->
+<section class = "banner-top2">
+	<div class = "container py-md-5">
+		<h2 class = "heading mb-sm-5 mb-4 text-center" style="font-family: 'Philosopher', sans-serif; text-shadow: 2px 2px 4px #7e7575;font-size: 3rem;"> OUR SERVICES</h2>
+		<div class="row services">
+    		<div class="card mb-3" style="margin: 0.5% 10%;">
+		    <a href = "{{ url_for('crop_recommend') }}">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img src="{{ url_for('static', filename = 'images/s3.jpg') }}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <span class="card-title card-font">CROP</span>
+                    <p class="card-text">Based on the NPK values provided, suggestions are made for the type of crops to be cultivated that are particularly well suited for the respective factors and conditions.</p>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
+            
+            
+            <div class="card mb-3" style="margin: 0.5% 10%;">
+            <a href = "{{ url_for('fertilizer_recommendation') }}">
+              <div class="row no-gutters">
+                 <div class="col-md-7">
+                      <div class="card-body">
+                        <span class="card-title card-font">FERTILIZER</span>
+                        <p class="card-text">Recommendation on the best type of fertiliser for the specified crop, given the soil's nutrient content values.</p>
+                      </div>
+                </div>
+                <div class="col-md-5">
+                  <img src="{{ url_for('static', filename = 'images/s2.jpg') }}" class="card-img" alt="...">
+                </div>
+              </div>
+            </a>
+            </div>
+            
+            
+            <div class="card mb-3" style="margin: 0.5% 10%;">
+            <a href = "{{ url_for('disease_prediction') }}">
+              <div class="row no-gutters">
+                <div class="col-md-5">
+                  <img src="{{ url_for('static', filename = 'images/s4.jpg') }}" class="card-img" alt="...">
+                </div>
+                <div class="col-md-7">
+                  <div class="card-body">
+                    <span class="card-title card-font">CROP DISEASE</span>
+                    <p class="card-text">When a crop's image is provided, estimating the name and causes of plant disease, as well as recommending various treatments.</p>
+                  </div>
+                </div>
+              </div>
+            </a>
+            </div>
+		</div>
+		
+	</div>
+</section>
+
+<!-- FAQs -->
+<section class = "banner-top8">
+	<div class = "container py-md-5">
+		<h2 class = "heading mb-sm-5 mb-4 text-center" style="font-family: 'Philosopher', sans-serif; text-shadow: 2px 2px 4px #7e7575;font-size: 3rem;">FAQs</h2>
+		<div style="margin: 0 5%; padding: 2% 5%; text-align: center;background: rgba(255,255,255,0.7);">
+				<h3 class="mt-4">Questions</h3>
+				<p class="mt-3" style="font-size: 20px; color: #323648;">
+				<strong>
+				    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, 
+				    when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into 
+				    electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, 
+				    and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+				</strong>
+				</p>
+		</div>
+	</div>
+</section>
+
+>>>>>>> Stashed changes
 </html>
 {% endblock %}

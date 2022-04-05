@@ -7,21 +7,21 @@
 <div class = "banner-top5">
   <br /><br /><br /><br /><br />
 <h2 style = "text-align: center; margin: 0px; color: #fff;">
-  <b>Get informed advice on fertilizer based on soil</b>
+  <b style="font-size: 50px;text-shadow: 6px 6px 7px black;">Get informed advice on fertilizer based on soil</b>
 </h2>
 <br />
 <div
   style = "
     width: 350px;
-    height: 40rem;
     margin: 0px auto;
     border-radius: 25px;
     padding: 10px 10px;
+    background: rgba(255,255,255,0.7);
   "
 >
   <form method = "POST" action = "{{ url_for('fert_recommend') }}" autocomplete="off">
     <div class = "form-group">
-      <label for = "Nitrogen" style = "display: block; text-align: center; font-size: 17px"><b>Nitrogen</b></label>
+      <label for = "Nitrogen" style = "display: block; text-align: center;"><b>Nitrogen</b></label>
       <input
         type = "number"
         min = "0"
@@ -34,7 +34,7 @@
       />
     </div>
     <div class = "form-group">
-      <label for = "Phosphorous" style = "display: block; text-align: center; font-size: 17px"><b>Phosphorous</b></label>
+      <label for = "Phosphorous" style = "display: block; text-align: center;"><b>Phosphorous</b></label>
       <input
         type = "number"
         min = "0"
@@ -47,7 +47,7 @@
       />
     </div>
     <div class = "form-group">
-      <label for = "Pottasium" style = "display: block; text-align: center; font-size: 17px"><b>Pottasium</b></label>
+      <label for = "Pottasium" style = "display: block; text-align: center;"><b>Pottasium</b></label>
       <input
         type = "number"
         min = "0"
@@ -60,7 +60,7 @@
       />
     </div>
     <div class = "form-group">
-      <label for = "crop" style = "display: block; text-align: center; font-size: 17px"><b>Crop you want to grow</b></label>
+      <label for = "crop" style = "display: block; text-align: center; "><b>Crop you want to grow</b></label>
       <select
         name = "cropname"
         class = "form-control"
